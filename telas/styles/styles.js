@@ -11,20 +11,34 @@ export const styles = StyleSheet.create({
         width: "100%",
         height: '100%',
         resizeMode: 'contain',
-        opacity: 0.8,
+        opacity: 0.7,
         backgroundColor: '#a60899'
     },
     LogoContainer: {
         width:'100%',
-        height: '100%',
+        height: '20%',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        bottom: 280
+        marginTop: 55
     },
     logo: {
         width:200,
-        height: 200
+        height: 200,
+        borderRadius: 500
+    },
+    radioImageContainer: {
+        width: '100%',
+        // backgroundColor: "#069",
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center'
+    },
+    radioImage: {
+        width:130,
+        height: 130,
+        borderRadius: 100,
     }
+
 
 })

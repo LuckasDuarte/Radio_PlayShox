@@ -1,8 +1,12 @@
 import { StatusBar } from 'expo-status-bar';
+
+
 import { StyleSheet, Text, View, ImageBackground, Image } from 'react-native';
 import { styles } from './styles/styles';
 
 export default function TelaInicial() {
+
+
   return (
     <View style={styles.container}>
         <StatusBar style="auto" />
@@ -17,6 +21,12 @@ export default function TelaInicial() {
                 />
             </View>
             {/* link radio: http://srv11.ipstm.net:7002/;type=http&nocache=1 */}
+            <View style={styles.radioImageContainer}>
+                <Image
+                    source={require('./images/radio.png')}
+                    style={styles.radioImage}
+                />
+            </View>
             
             
         </ImageBackground>
