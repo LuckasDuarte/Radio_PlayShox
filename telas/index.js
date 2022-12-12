@@ -4,23 +4,22 @@ import { useFonts,
     Ubuntu_400Regular,
     Ubuntu_700Bold
 } from "@expo-google-fonts/ubuntu"
-
 import { StyleSheet, Text, View, ImageBackground, Image } from 'react-native';
 import { styles } from './styles/styles';
-
-// Carrega as Fontes
+// icones
+import { FontAwesome5 } from '@expo/vector-icons';
 
 export default function TelaInicial() {
 
+    console.disableYellowBox = true;
 
-    let [fontsLoaded] = useFonts({
+    const [fontsLoaded] = useFonts({
        Ubuntu_400Regular,
        Ubuntu_700Bold
     });
 
-    
-    if (!fontsLoaded) {
-        return <AppLoading/>;
+    if (!fontsLoaded){
+        return <AppLoading/>
     } else {
     return (
         <View style={styles.container}>
@@ -40,13 +39,16 @@ export default function TelaInicial() {
                     <Image
                         source={require('./images/radio.png')}
                         style={styles.radioImage}
-                    />
-                    
+                    /> 
+                </View>
+                <View style={styles.titleContainer}>
+                    <Text style={styles.title}>RÁDIO BPS</Text>
                 </View>
                 
                 
             </ImageBackground>
         </View>
-        );
+    );
     }
+    
 }

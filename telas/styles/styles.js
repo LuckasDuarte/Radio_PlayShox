@@ -39,7 +39,18 @@ export const styles = StyleSheet.create({
         height: 130,
         borderRadius: 100,
     },
-    
+    titleContainer:{
+        width: '100%',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        marginTop: 20
+    },
+    title:{
+        color: "#fff",
+        fontSize: 22,
+        fontFamily: 'Ubuntu_700Bold',
+    },
 
 
 })
