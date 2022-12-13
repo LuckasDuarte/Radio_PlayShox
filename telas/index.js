@@ -1,15 +1,48 @@
+import { useState, useEffect } from 'react';
 import { StatusBar } from 'expo-status-bar';
 import AppLoading from 'expo-app-loading';
 import { useFonts,
     Ubuntu_400Regular,
     Ubuntu_700Bold
 } from "@expo-google-fonts/ubuntu"
-import { StyleSheet, Text, View, ImageBackground, Image } from 'react-native';
+import { StyleSheet, Text, View, ImageBackground, Image, TouchableOpacity} from 'react-native';
+import { Audio } from 'expo-av';
 import { styles } from './styles/styles';
 // icones
 import { FontAwesome5 } from '@expo/vector-icons';
+import { Ionicons } from '@expo/vector-icons';
 
 export default function TelaInicial() {
+
+    // <Ionicons name="pause" size={24} color="black" />
+
+
+    // Config Audio
+    const [sound, setSound] = useState();
+
+    async function TocarRadio(){
+        console.log("Sintonizando a Rádio");
+
+        const {sound} = await Audio.Sound.createAsync({uri:("http://srv11.ipstm.net:7002/;type=http&nocache=1")});
+        setSound(sound);
+
+        console.log("Rádio Sintonizada, Tocando...")
+        await sound.playAsync();
+
+    }
+
+    useEffect (() => {
+        return sound
+
+        ? () => {
+            console.log("Recarregando Rádio...");
+
+            sound.playAsync();
+        }
+        : undefined;
+    }, [sound])
+
+
 
     console.disableYellowBox = true;
 
@@ -43,9 +76,14 @@ export default function TelaInicial() {
                 </View>
                 <View style={styles.titleContainer}>
                     <Text style={styles.title}>RÁDIO BPS</Text>
+                        <TouchableOpacity
+                            style={styles.pressablePlay}
+                            onPress={TocarRadio}
+                        >
+                            <FontAwesome5 name="play" style={styles.iconePlay} />
+                        </TouchableOpacity>
+                        
                 </View>
-                
-                
             </ImageBackground>
         </View>
     );
