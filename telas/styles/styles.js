@@ -53,8 +53,8 @@ export const styles = StyleSheet.create({
     },
     iconePlay:{
         color: '#a60899',
-        fontSize: 50,
-        left: 5
+        fontSize: 45,
+        left: 1
     },
     pressablePlay: {
         backgroundColor: '#fff',

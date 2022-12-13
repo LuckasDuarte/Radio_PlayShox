@@ -5,7 +5,7 @@ import { useFonts,
     Ubuntu_400Regular,
     Ubuntu_700Bold
 } from "@expo-google-fonts/ubuntu"
-import { StyleSheet, Text, View, ImageBackground, Image, TouchableOpacity} from 'react-native';
+import { StyleSheet, Text, View, ImageBackground, Image, TouchableOpacity, Button} from 'react-native';
 import { Audio } from 'expo-av';
 import { styles } from './styles/styles';
 // icones
@@ -15,10 +15,18 @@ import { Ionicons } from '@expo/vector-icons';
 export default function TelaInicial() {
 
     // <Ionicons name="pause" size={24} color="black" />
+    // ToDo Criar Pause 
 
 
     // Config Audio
-    const [sound, setSound] = useState();
+    const [sound, setSound] = useState(false);
+    const [iconName, setIconName] = useState('play');
+    
+
+    
+
+    
+    
 
     async function TocarRadio(){
         console.log("Sintonizando a Rádio");
@@ -27,22 +35,25 @@ export default function TelaInicial() {
         setSound(sound);
 
         console.log("Rádio Sintonizada, Tocando...")
-        await sound.playAsync();
-
+    
+        if (iconName == "play"){
+            sound.pauseAsync()
+        } else {
+            sound.playAsync()
+        }
     }
 
     useEffect (() => {
+        
         return sound
-
         ? () => {
-            console.log("Recarregando Rádio...");
+            console.log("Pausando Rádio...");
+            
+            sound.unloadAsync();
 
-            sound.playAsync();
         }
         : undefined;
     }, [sound])
-
-
 
     console.disableYellowBox = true;
 
@@ -78,11 +89,19 @@ export default function TelaInicial() {
                     <Text style={styles.title}>RÁDIO BPS</Text>
                         <TouchableOpacity
                             style={styles.pressablePlay}
+                            onPressIn={() => {
+                                if (iconName == "play"){
+                                    setIconName("pause")
+                                } else {
+                                    setIconName("play")
+                                }
+
+                                
+                            }}
                             onPress={TocarRadio}
                         >
-                            <FontAwesome5 name="play" style={styles.iconePlay} />
+                            <FontAwesome5 name={iconName} style={styles.iconePlay} />
                         </TouchableOpacity>
-                        
                 </View>
             </ImageBackground>
         </View>
@@ -90,3 +109,5 @@ export default function TelaInicial() {
     }
     
 }
+
+// <FontAwesome5 name="play" style={styles.iconePlay} />
