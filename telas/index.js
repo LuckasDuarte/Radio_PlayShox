@@ -79,12 +79,6 @@ export default function TelaInicial() {
                     />
                 </View>
                 {/* link radio: http://srv11.ipstm.net:7002/;type=http&nocache=1 */}
-                <View style={styles.radioImageContainer}>
-                    <Image
-                        source={require('./images/radio.png')}
-                        style={styles.radioImage}
-                    /> 
-                </View>
                 <View style={styles.titleContainer}>
                     <Text style={styles.title}>RÁDIO BPS</Text>
                         <TouchableOpacity
@@ -95,8 +89,6 @@ export default function TelaInicial() {
                                 } else {
                                     setIconName("play")
                                 }
-
-                                
                             }}
                             onPress={TocarRadio}
                         >

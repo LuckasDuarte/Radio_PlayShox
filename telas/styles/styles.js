@@ -27,18 +27,6 @@ export const styles = StyleSheet.create({
         height: 200,
         borderRadius: 500
     },
-    radioImageContainer: {
-        width: '100%',
-        // backgroundColor: "#069",
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center'
-    },
-    radioImage: {
-        width:130,
-        height: 130,
-        borderRadius: 100,
-    },
     titleContainer:{
         width: '100%',
         display: 'flex',
