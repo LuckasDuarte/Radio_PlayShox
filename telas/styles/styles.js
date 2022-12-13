@@ -20,7 +20,7 @@ export const styles = StyleSheet.create({
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        marginTop: 55
+        marginTop: 80
     },
     logo: {
         width:200,
@@ -32,7 +32,7 @@ export const styles = StyleSheet.create({
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        marginTop: 20
+        marginTop: 70
     },
     title:{
         color: "#fff",
@@ -49,7 +49,7 @@ export const styles = StyleSheet.create({
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        marginTop: 50,
+        marginTop: 25,
         width: 90,
         height: 90,
         borderRadius: 100
