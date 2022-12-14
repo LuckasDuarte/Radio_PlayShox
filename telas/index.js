@@ -145,6 +145,13 @@ export default function TelaInicial() {
     }
     
 }
+// ToDo:
+// Navegar as paginas play shox: https://docs.expo.dev/versions/latest/sdk/webbrowser/
+// Discord: https://discord.com/invite/T9khBcu
+// Site: https://www.brasilplayshox.com.br/
+// Youtube: https://www.youtube.com/@BrasilPlayShox
+
+
 
 // <FontAwesome5 name="play" style={styles.iconePlay} />
 // Pacote Animações prontas https://github.com/oblador/react-native-animatable
