@@ -11,7 +11,7 @@ export const styles = StyleSheet.create({
         width: "100%",
         height: '100%',
         resizeMode: 'contain',
-        opacity: 0.7,
+        opacity: 0.9,
         backgroundColor: '#a60899'
     },
     LogoContainer: {
@@ -53,6 +53,18 @@ export const styles = StyleSheet.create({
         width: 90,
         height: 90,
         borderRadius: 100
+    },
+    redesContainer:{
+        width: '100%',
+        height: '20%',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        flexDirection: 'row'
+    },
+    btnRedes: {
+        margin: 20,
+        marginTop: 80,
     }
 
 

@@ -12,6 +12,7 @@ import { styles } from './styles/styles';
 // icones
 import { FontAwesome5 } from '@expo/vector-icons';
 import { AntDesign } from '@expo/vector-icons';
+import { Foundation } from '@expo/vector-icons';
 
 export default function TelaInicial() {
 
@@ -105,7 +106,39 @@ export default function TelaInicial() {
                         </TouchableOpacity>
                 </Animatable.View>
                 {/* Redes */}
-                
+                <Animatable.View
+                    style={styles.redesContainer}
+                    animation="fadeInUp"
+                >
+                    <Animatable.View
+                        animation="fadeInRight"
+                        delay={600}
+                    >
+                        <TouchableOpacity 
+                        style={styles.btnRedes}
+                        >
+                            <AntDesign name="youtube" size={50} color="#f00" />
+                        </TouchableOpacity>
+                    </Animatable.View>
+                    
+                    
+                    <TouchableOpacity 
+                    style={styles.btnRedes}
+                    >
+                        <Foundation name="web" size={50} color="#41729F" />
+                    </TouchableOpacity>
+                    
+                    <Animatable.View
+                        animation="fadeInLeft"
+                        delay={600}
+                    >
+                        <TouchableOpacity 
+                            style={styles.btnRedes}
+                        >
+                            <FontAwesome5 name="discord" size={50} color="#993399" />
+                        </TouchableOpacity>
+                    </Animatable.View>
+                </Animatable.View>
             </ImageBackground>
         </View>
     );
