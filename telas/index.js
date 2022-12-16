@@ -6,6 +6,7 @@ import { useFonts,
     Ubuntu_700Bold
 } from "@expo-google-fonts/ubuntu"
 import { StyleSheet, Text, View, ImageBackground, Image, TouchableOpacity} from 'react-native';
+// Pacote de Animações
 import * as Animatable from 'react-native-animatable'
 import { Audio } from 'expo-av';
 import { styles } from './styles/styles';
@@ -13,6 +14,27 @@ import { styles } from './styles/styles';
 import { FontAwesome5 } from '@expo/vector-icons';
 import { AntDesign } from '@expo/vector-icons';
 import { Foundation } from '@expo/vector-icons';
+// Pacote de navegação na internet
+import * as WebBrowser from 'expo-web-browser';
+
+// Youtube
+const Youtube = ("https://www.youtube.com/@BrasilPlayShox")
+    const abrirYoutube = async (Youtube) => {
+        let result = await WebBrowser.openBrowserAsync(Youtube)
+    };
+
+// Site 
+const SiteShox = ("https://brasilplayshox.com.br/")
+    const abrirSiteShox = async (SiteShox) => {
+        let result = await WebBrowser.openBrowserAsync(SiteShox)
+    };
+
+// Discord
+const Discord = ("https://discord.com/invite/T9khBcu")
+    const abrirDiscord = async (Discord) => {
+        let result = await WebBrowser.openBrowserAsync(Discord)
+    };
+
 
 export default function TelaInicial() {
 
@@ -116,6 +138,7 @@ export default function TelaInicial() {
                     >
                         <TouchableOpacity 
                         style={styles.btnRedes}
+                        onPress={() => abrirYoutube(Youtube)}
                         >
                             <AntDesign name="youtube" size={50} color="#f00" />
                         </TouchableOpacity>
@@ -123,6 +146,7 @@ export default function TelaInicial() {
                     
                     
                     <TouchableOpacity 
+                    onPress={() => abrirSiteShox(SiteShox)}
                     style={styles.btnRedes}
                     >
                         <Foundation name="web" size={50} color="#41729F" />
@@ -134,6 +158,7 @@ export default function TelaInicial() {
                     >
                         <TouchableOpacity 
                             style={styles.btnRedes}
+                            onPress={() => abrirDiscord(Discord)}
                         >
                             <FontAwesome5 name="discord" size={50} color="#993399" />
                         </TouchableOpacity>
@@ -145,13 +170,5 @@ export default function TelaInicial() {
     }
     
 }
-// ToDo:
-// Navegar as paginas play shox: https://docs.expo.dev/versions/latest/sdk/webbrowser/
-// Discord: https://discord.com/invite/T9khBcu
-// Site: https://www.brasilplayshox.com.br/
-// Youtube: https://www.youtube.com/@BrasilPlayShox
 
-
-
-// <FontAwesome5 name="play" style={styles.iconePlay} />
 // Pacote Animações prontas https://github.com/oblador/react-native-animatable
